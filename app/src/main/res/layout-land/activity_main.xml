@@ -5,14 +5,21 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".MainActivity"
-        android:orientation="vertical">
-
+        android:orientation="horizontal">
+    <LinearLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            tools:context=".MainActivity"
+            android:orientation="vertical"
+            android:layout_marginStart="40dp"
+            android:layout_gravity="center_vertical">
     <android.support.design.widget.TextInputLayout
             android:id="@+id/inputLayout1"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:textColorHint="@color/colorPrimaryDark"
-            android:layout_marginTop="20dp"
             android:layout_gravity="center_horizontal">
         <EditText
                 android:id="@+id/txt_Name"
@@ -22,22 +29,12 @@
                 android:inputType="text" android:autofillHints=""/>
     </android.support.design.widget.TextInputLayout>
 
-    <ImageView
-            android:id="@+id/image_view"
-            android:src="@color/colorPrimary"
-            android:scaleType="centerCrop"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="20dp"
-            android:layout_width="300dp"
-            android:layout_height="300dp" tools:ignore="ContentDescription"/>
-
     <Button
             android:id="@+id/capture_btn"
             android:text="@string/create_photo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="20dp"
             style="@style/Widget.AppCompat.Button.Colored"/>
     <TextView
             android:text="@string/name"
@@ -45,8 +42,16 @@
             android:layout_height="wrap_content"
             android:id="@+id/txt_your_name"
             android:textSize="20sp"
-            android:layout_marginTop="20dp"
             android:layout_gravity="center_horizontal"/>
+    </LinearLayout>
+    <ImageView
+            android:layout_marginStart="20dp"
+            android:layout_gravity="center_vertical"
+            android:id="@+id/image_view"
+            android:src="@color/colorPrimary"
+            android:scaleType="centerCrop"
+            android:layout_width="300dp"
+            android:layout_height="300dp" tools:ignore="ContentDescription"/>
 
 
 </LinearLayout>

@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Второе_задание_КОДЭ</string>
+    <string name="action_settings">АНГЛ</string>
+    <string name="name">Ваше Имя</string>
+    <string name="enter_name">Введите ваше имя</string>
+    <string name="create_photo">Сделать фотоснимок</string>
+</resources>
