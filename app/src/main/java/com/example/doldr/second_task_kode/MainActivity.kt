@@ -10,8 +10,8 @@ import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.provider.MediaStore
-import android.support.v7.app.AppCompatActivity;
-import android.view.View
+import android.support.v7.app.AppCompatActivity
+
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -59,23 +59,19 @@ class MainActivity : AppCompatActivity() {
         values.put(MediaStore.Images.Media.TITLE, "New Picture")
         values.put(MediaStore.Images.Media.DESCRIPTION, "From the Camera")
         image_uri = contentResolver.insert(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, values)
-        //camera intent
         val cameraIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
         cameraIntent.putExtra(MediaStore.EXTRA_OUTPUT, image_uri)
         startActivityForResult(cameraIntent, IMAGE_CAPTURE_CODE)
     }
 
     override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
-        //called when user presses ALLOW or DENY from Permission Request Popup
         when(requestCode){
             PERMISSION_CODE -> {
                 if (grantResults.isNotEmpty() && grantResults[0] ==
                     PackageManager.PERMISSION_GRANTED){
-                    //permission from popup was granted
                     openCamera()
                 }
                 else{
-                    //permission from popup was denied
                     Toast.makeText(this, "Permission denied", Toast.LENGTH_SHORT).show()
                 }
             }
@@ -83,9 +79,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        //called when image was captured from camera intent
         if (resultCode == Activity.RESULT_OK){
-            //set image captured to image view
             txt_your_name.text = name
             image_view.setImageURI(image_uri)
         }
