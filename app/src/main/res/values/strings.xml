@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">Second_Task_KODE</string>
     <string name="action_settings">RUS</string>
+    <string name="storage_permission_rationale_title">Storage permission required</string>
+    <string name="storage_permition_rationale_message">In order to take a picture, you must grant this permission!</string>
+    <string name="storage_permission_denied_message">Storage permission is required in order to take a photo with the camera</string>
 </resources>
